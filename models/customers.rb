@@ -49,5 +49,11 @@ class Customer
     return films.map {|film| Film.new(film)}
   end
 
+    def remaining_funds()
+      film = self.films()
+      film_cost = film.map{|film| film.price}
+      total_cost = film_cost.sum
+      return @funds - total_cost
+    end
 
 end
